@@ -1,0 +1,96 @@
+.content_principal{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.equipoG{
+    font-family: monospace;
+    padding-left: 35%;
+}
+
+
+.tiempo{
+    margin: 0%;
+    padding-left:38px ;
+}
+.cronometro{
+    margin: 0%;
+    padding-left: 10px;
+}
+
+.equipo{
+    text-align: center;
+    width: 200px;
+    padding: 20px;
+}
+.equipo2{
+    margin-top: 120px;
+}
+.textE{
+    margin-top: 20px;
+}
+.contadorL{
+    margin-right: 40px;
+}
+
+.boton{
+    width: 60px;
+    height: 25px;
+    background-color: rgb(60, 141, 241);
+    color: white;
+    border-radius: 5px;
+}
+.puntos{
+    margin: 0%;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.empezar{
+    background-color: rgb(47, 226, 59);
+    width: 80px;
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 75px;
+}
+
+table{
+    padding: 10px;
+}
+td{
+    padding: 10px;
+    font-size: larger;
+}
+
+th{
+    font-size: larger;
+}
+
+.divTiempo{
+ animation: entradaTop 2s forwards ;
+}
+ @keyframes entradaTop{
+    0%{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-120px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    60%{
+        transform: translateY(-30px);
+    }
+    70%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+ }
