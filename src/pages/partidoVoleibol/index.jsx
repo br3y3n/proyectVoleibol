@@ -18,12 +18,13 @@ export default function PartidoVoleibol() {
     aumentarPuntos,
     decrementarPuntos,
     obtenerGanadorSet,
-    obtenerGanadorPartido
+    obtenerGanadorPartido,
+    reiniciarPartido
   } = usePuntosSets();
 
   const equipo1ClickHandler = () => aumentarPuntos("Equipo 1");
   const equipo2ClickHandler = () => aumentarPuntos("Equipo 2");
-  const EquipoGanadro= ()=> obtenerGanadorPartido();
+  
   
   useEffect(() => {
     let interval = null;
@@ -53,13 +54,20 @@ export default function PartidoVoleibol() {
     setIsActive(false);
     setTime(0);
   };
-
+  let ganadorPartido = obtenerGanadorPartido()
   return (
     <>
+    <div className='header'>
      <h1>Sets Jugados: {setsJugados}</h1>
-    <h1 className='equipoG'>{EquipoGanadro()}</h1>
+    <h1 className='equipoG'>{obtenerGanadorPartido()}</h1>
+    {
+      ganadorPartido ===' '? ' ':
+    <button className='botonRe' 
+     onClick={()=>reiniciarPartido()}>Reinicar Partido</button>
+    }
+    </div>
     <article className='content_principal'>
-      <section className='equipo'>
+      <section className='equipo equipo1'>
         <h1>NOOBIES </h1>
         <img src="src/assets/equipo1.png" alt="" width={150} />
         <p className='puntos'>{equipo1Puntos}</p>

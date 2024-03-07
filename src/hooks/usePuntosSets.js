@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 export const usePuntosSets = () => {
     // Definición de variables de estado
     const [equipo1Puntos, setEquipo1Puntos] = useState(0);
@@ -66,7 +66,19 @@ export const usePuntosSets = () => {
     }else if(equipo2.length===3){
       return "Ganador Del Partido Panthers 🏆"
     }
+    else {
+      return ' '
     }
+    }
+
+    const reiniciarPartido = () => {
+      setGanadorSets([]);
+      setSetsJugados(0)
+      reiniciarPuntos()
+
+        };
+
+   
     
     return {
       equipo1Puntos,
@@ -77,6 +89,7 @@ export const usePuntosSets = () => {
       decrementarPuntos,
       reiniciarPuntos,
       obtenerGanadorSet,
-      obtenerGanadorPartido
+      obtenerGanadorPartido,
+      reiniciarPartido
     };
   };
